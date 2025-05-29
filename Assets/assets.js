@@ -1,19 +1,12 @@
-import blog_pic_1 from './blog_pic_1.png'
-import blog_pic_2 from './blog_pic_2.png'
-import blog_pic_3 from './blog_pic_3.png'
-import blog_pic_4 from './blog_pic_4.png'
-import blog_pic_5 from './blog_pic_5.png'
-import blog_pic_6 from './blog_pic_6.png'
-import blog_pic_7 from './blog_pic_7.png'
-import blog_pic_8 from './blog_pic_8.png'
+import blog_pic_1 from './blog_pic_1.jpeg'
+import blog_pic_2 from './blog_pic_2.jpg'
+import blog_pic_3 from './blog_pic_3.jpg'
+import blog_pic_4 from './blog_pic_4.jpg'
+import blog_pic_5 from './blog_pic_5.jpg'
+import blog_pic_6 from './blog_pic_6.jpg'
+import blog_pic_7 from './blog_pic_7.jpg'
+import blog_pic_8 from './blog_pic_8.jpg'
 import blog_pic_9 from './blog_pic_9.png'
-import blog_pic_10 from './blog_pic_10.png'
-import blog_pic_11 from './blog_pic_11.png'
-import blog_pic_12 from './blog_pic_12.png'
-import blog_pic_13 from './blog_pic_13.png'
-import blog_pic_14 from './blog_pic_14.png'
-import blog_pic_15 from './blog_pic_15.png'
-import blog_pic_16 from './blog_pic_16.png'
 import facebook_icon from './fred.png'
 import pinterest_icon from './pinred.png'
 import instagram_icon from './inred.png'
@@ -174,109 +167,6 @@ export const blog_data = [
     location: {
       lat: 37.5665,
       lng: 126.978,
-    },
-  },
-  {
-    id: 10,
-    title: 'Colombia’s Colors: Cartagena’s Caribbean Magic',
-    description:
-      'Sun-soaked streets, colonial charm, and a burst of flavor on every corner.',
-    image: blog_pic_10,
-    date: Date.now(),
-    category: 'South America',
-    author: 'Anne Dabuyan',
-    author_img: profile_icon,
-    location: {
-      lat: 10.391,
-      lng: -75.4794,
-    },
-  },
-  {
-    id: 11,
-    title: 'The Allure of the Amalfi Coast, Italy',
-    description: 'Lemon groves, cliffside roads, and Mediterranean magic.',
-    image: blog_pic_11,
-    date: Date.now(),
-    category: 'Europe',
-    author: 'Bryan Palmes',
-    author_img: profile_icon,
-    location: {
-      lat: 40.6333,
-      lng: 14.602,
-    },
-  },
-  {
-    id: 12,
-    title: 'Melbourne’s Creative Pulse: Art, Coffee, and Laneways',
-    description: 'The culture capital of Australia through a local lens.',
-    image: blog_pic_12,
-    date: Date.now(),
-    category: 'Australia',
-    author: 'Bianca Dalangin',
-    author_img: profile_icon,
-    location: {
-      lat: -37.8136,
-      lng: 144.9631,
-    },
-  },
-  {
-    id: 13,
-    title: 'Philippines Paradise: Island Hopping in Palawan',
-    description:
-      'Turquoise waters, limestone cliffs, and the quiet escape of island life.',
-    image: blog_pic_13,
-    date: Date.now(),
-    category: 'Asia',
-    author: 'Anne Dabuyan',
-    author_img: profile_icon,
-    location: {
-      lat: 9.8349,
-      lng: 118.7384,
-    },
-  },
-  {
-    id: 14,
-    title: 'Buenos Aires: Argentina’s European Soul in South America',
-    description:
-      'Tango nights, literary cafés, and a city that never forgets to feel.',
-    image: blog_pic_14,
-    date: Date.now(),
-    category: 'South America',
-    author: 'Bryan Palmes',
-    author_img: profile_icon,
-    location: {
-      lat: -34.6037,
-      lng: -58.3816,
-    },
-  },
-  {
-    id: 15,
-    title: 'Biking Through the Dutch Countryside',
-    description:
-      'Windmills, tulip fields, and the ultimate slow travel through the Netherlands.',
-    image: blog_pic_15,
-    date: Date.now(),
-    category: 'Europe',
-    author: 'Bianca Dalangin',
-    author_img: profile_icon,
-    location: {
-      lat: 52.1326,
-      lng: 5.2913,
-    },
-  },
-  {
-    id: 16,
-    title: 'Tasmania: Australia’s Untamed Wilderness Escape',
-    description:
-      'Hikes, heritage towns, and the island you never expected to love.',
-    image: blog_pic_16,
-    date: Date.now(),
-    category: 'Australia',
-    author: 'Anne Dabuyan',
-    author_img: profile_icon,
-    location: {
-      lat: -42.8821,
-      lng: 147.3272,
     },
   },
 ]
