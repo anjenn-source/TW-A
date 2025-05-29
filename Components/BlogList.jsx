@@ -6,6 +6,11 @@ import axios from 'axios'
 const BlogList = () => {
   const [menu, setMenu] = useState('All')
   const [blogs, setBlogs] = useState([])
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const fetchBlogs = async () => {
     try {
@@ -23,12 +28,11 @@ const BlogList = () => {
     fetchBlogs()
   }, [])
 
-  const activeClass =
-    'bg-[#8f2a16] text-white py-1 px-4 rounded-full transition'
+  const activeClass = 'bg-deepred text-white py-1 px-4 rounded-full transition'
   const inactiveClass =
-    'bg-[#F1F1F1] text-[#333] py-1 px-4 rounded-full transition hover:bg-[#8f2a16] hover:text-white'
+    'bg-gray-100 text-gray-800 py-1 px-4 rounded-full transition hover:bg-deepred hover:text-white'
 
-  console.log('Rendering blogs:', blogs)
+  if (!mounted) return null
 
   return (
     <div className="bg-[#fdf9f6] py-12">
@@ -48,10 +52,14 @@ const BlogList = () => {
 
       <div className="flex flex-wrap justify-around gap-1 gap-y-10 mb-16 xl:mx-24">
         {blogs
-          .filter((item) => menu === 'All' || item.category === menu)
+          .filter(
+            (item) =>
+              menu === 'All' ||
+              item.category.toLowerCase() === menu.toLowerCase()
+          )
           .map((item, index) => (
             <BlogItem
-              key={item._id || index} // fallback in case _id doesn't exist
+              key={item._id || index}
               id={item._id || index}
               image={item.image}
               title={item.title}
