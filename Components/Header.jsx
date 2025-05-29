@@ -39,7 +39,7 @@ const Header = () => {
 
         <Link href="/signup" passHref legacyBehavior>
           <a
-            className="flex items-center gap-2 font-small py-2 px-4 sm:py-3 sm:px-6 border border-solid text-maroon"
+            className="flex items-center gap-2 font-medium py-2 px-4 sm:py-3 sm:px-6 border border-solid text-maroon"
             style={{
               borderColor: '#3e1008',
               boxShadow: '-7px 7px 0px #3e1008',
@@ -51,7 +51,7 @@ const Header = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen w-full flex flex-col justify-center items-center text-center text-white px-5 md:px-12 lg:px-28 overflow-hidden">
+      <section className="relative min-h-[90vh] w-full flex justify-center items-center text-center text-white px-5 md:px-12 lg:px-28 overflow-visible">
         {/* Background Video */}
         <video
           autoPlay
@@ -67,39 +67,42 @@ const Header = () => {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/50 -z-10"></div>
 
-        {/* Content */}
-        <h1 className="text-4xl sm:text-6xl font-semibold max-w-3xl leading-tight text-[#ecded2]">
-          The Itinerary in My Head
-        </h1>
-        <p className="mt-6 max-w-xl text-sm sm:text-base text-[#ecded2]">
-          A living journal of places I dream of, might have touched, and hope to
-          reach. Nomad is a map of memories—some made, some imagined—gathering
-          stories from where I’ve been, where I am, and where I long to go.
-        </p>
+        {/* Content wrapper */}
+        <div className="relative max-w-4xl px-4 flex flex-col items-center">
+          <h1 className="text-4xl sm:text-6xl font-semibold leading-tight text-[#ecded2]">
+            The Itinerary in My Head
+          </h1>
+          <p className="mt-6 text-sm sm:text-base text-[#ecded2] max-w-xl">
+            A living journal of places I dream of, might have touched, and hope
+            to reach. Nomad is a map of memories—some made, some
+            imagined—gathering stories from where I’ve been, where I am, and
+            where I long to go.
+          </p>
 
-        <form
-          onSubmit={onSubmitHandler}
-          className="mt-10 flex max-w-md w-full border border-solid"
-          style={{
-            borderColor: '#d9bfa9',
-            boxShadow: '-7px 7px 0px #3e1008',
-          }}
-        >
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-            type="email"
-            placeholder="Join my Nomadic Circle"
-            className="flex-grow px-4 py-3 bg-[#fdf9f6] text-maroon outline-none"
-            required
-          />
-          <button
-            type="submit"
-            className="bg-[#fdf9f6] text-maroon py-3 px-6 hover:bg-deepred transition-colors duration-300"
+          <form
+            onSubmit={onSubmitHandler}
+            className="mt-10 flex max-w-md w-full border border-solid"
+            style={{
+              borderColor: '#d9bfa9',
+              boxShadow: '-7px 7px 0px #3e1008',
+            }}
           >
-            Subscribe
-          </button>
-        </form>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              type="email"
+              placeholder="Join my Nomadic Circle"
+              className="flex-grow px-4 py-3 bg-[#fdf9f6] text-maroon outline-none"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-[#fdf9f6] text-maroon py-3 px-6 hover:bg-deepred transition-colors duration-300"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
       </section>
     </>
   )
