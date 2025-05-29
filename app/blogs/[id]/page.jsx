@@ -11,7 +11,7 @@ import dynamic from 'next/dynamic'
 // Dynamically import Map with no SSR
 const Map = dynamic(() => import('@/Components/MapWithMarker'), { ssr: false })
 
-const Page = ({ params }) => {
+export default function Page({ params }) {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -25,12 +25,10 @@ const Page = ({ params }) => {
         if (response.data && !response.data.error) {
           setData(response.data)
         } else {
-          // fallback to static assets if API returns no blog or error
           const staticBlog = blog_data.find((item) => item._id === params.id)
           setData(staticBlog || null)
         }
       } catch (error) {
-        // fallback to static assets on fetch failure
         const staticBlog = blog_data.find((item) => item._id === params.id)
         setData(staticBlog || null)
       } finally {
@@ -140,5 +138,3 @@ const Page = ({ params }) => {
     </>
   )
 }
-
-export default Page
