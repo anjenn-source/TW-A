@@ -35,8 +35,8 @@ const BlogList = () => {
   if (!mounted) return null
 
   return (
-    <div className="bg-[#fdf9f6] py-12">
-      <div className="flex justify-center gap-4 my-10 flex-wrap">
+    <div className="bg-[#fdf9f6] pt-0 pb-12">
+      <div className="flex justify-center gap-4 my-0 flex-wrap">
         {['All', 'Asia', 'Europe', 'South America', 'Australia'].map(
           (region) => (
             <button
