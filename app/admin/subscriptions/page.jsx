@@ -4,7 +4,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 
-const page = () => {
+const Page = () => {
   const [emails, setEmails] = useState([])
 
   const fetchEmails = async () => {
@@ -49,17 +49,15 @@ const page = () => {
             </tr>
           </thead>
           <tbody>
-            {emails.map((item, index) => {
-              return (
-                <SubsTableItem
-                  key={index}
-                  mongoId={item._id}
-                  deleteEmail={deleteEmail}
-                  email={item.email}
-                  date={item.date}
-                />
-              )
-            })}
+            {emails.map((item, index) => (
+              <SubsTableItem
+                key={index}
+                mongoId={item._id}
+                deleteEmail={deleteEmail}
+                email={item.email}
+                date={item.date}
+              />
+            ))}
           </tbody>
         </table>
       </div>

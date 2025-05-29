@@ -4,7 +4,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 
-const page = () => {
+const Page = () => {
   const [blogs, setBlogs] = useState([])
 
   const fetchBlogs = async () => {
@@ -48,19 +48,17 @@ const page = () => {
             </tr>
           </thead>
           <tbody>
-            {blogs.map((item, index) => {
-              return (
-                <BlogTableItem
-                  key={index}
-                  mongoId={item._id}
-                  title={item.title}
-                  author={item.author}
-                  authorImg={item.authorImg}
-                  date={item.date}
-                  deleteBlog={deleteBlog}
-                />
-              )
-            })}
+            {blogs.map((item, index) => (
+              <BlogTableItem
+                key={index}
+                mongoId={item._id}
+                title={item.title}
+                author={item.author}
+                authorImg={item.authorImg}
+                date={item.date}
+                deleteBlog={deleteBlog}
+              />
+            ))}
           </tbody>
         </table>
       </div>

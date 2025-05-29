@@ -15,29 +15,29 @@ const Page = ({ params }) => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  const fetchBlogData = async () => {
-    try {
-      const response = await axios.get('/api/blog', {
-        params: { id: params.id },
-      })
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      try {
+        const response = await axios.get('/api/blog', {
+          params: { id: params.id },
+        })
 
-      if (response.data && !response.data.error) {
-        setData(response.data)
-      } else {
-        // fallback to static assets if API returns no blog or error
+        if (response.data && !response.data.error) {
+          setData(response.data)
+        } else {
+          // fallback to static assets if API returns no blog or error
+          const staticBlog = blog_data.find((item) => item._id === params.id)
+          setData(staticBlog || null)
+        }
+      } catch (error) {
+        // fallback to static assets on fetch failure
         const staticBlog = blog_data.find((item) => item._id === params.id)
         setData(staticBlog || null)
+      } finally {
+        setLoading(false)
       }
-    } catch (error) {
-      // fallback to static assets on fetch failure
-      const staticBlog = blog_data.find((item) => item._id === params.id)
-      setData(staticBlog || null)
-    } finally {
-      setLoading(false)
     }
-  }
 
-  useEffect(() => {
     fetchBlogData()
   }, [params.id])
 
