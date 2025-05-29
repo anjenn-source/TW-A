@@ -21,6 +21,7 @@ const BlogTableItem = ({
           width={40}
           height={40}
           src={authorImg ? authorImg : assets.profile_icon}
+          alt={author ? `${author} profile` : 'Profile icon'}
         />
         <p>{author ? author : 'No author'}</p>
       </th>

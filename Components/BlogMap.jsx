@@ -30,20 +30,19 @@ function Recenter({ lat, lng }) {
 }
 
 export default function BlogMap({ locations }) {
-  if (!locations || locations.length === 0) return null
+  // Always call hooks unconditionally
+  const initial = locations && locations.length > 0 ? locations[0] : null
 
-  const initial = locations[0]
-
-  const [position, setPosition] = useState({
-    lat: initial.location.lat,
-    lng: initial.location.lng,
-  })
+  const [position, setPosition] = useState(
+    initial
+      ? { lat: initial.location.lat, lng: initial.location.lng }
+      : { lat: 0, lng: 0 } // fallback position, or you can use null and handle below
+  )
 
   const markerRef = useRef(null)
 
-  // Sync position if locations prop changes
   useEffect(() => {
-    if (locations[0]?.location) {
+    if (locations && locations.length > 0 && locations[0]?.location) {
       setPosition({
         lat: locations[0].location.lat,
         lng: locations[0].location.lng,
@@ -60,6 +59,9 @@ export default function BlogMap({ locations }) {
       }
     },
   }
+
+  // Handle empty locations by returning null after hooks
+  if (!initial) return null
 
   return (
     <MapContainer
