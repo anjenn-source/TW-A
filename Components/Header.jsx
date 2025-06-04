@@ -86,7 +86,7 @@ const Header = () => {
 
           <form
             onSubmit={onSubmitHandler}
-            className="mt-8 sm:mt-10 flex w-full max-w-[90%] sm:max-w-md lg:max-w-lg border border-solid"
+            className="mt-8 sm:mt-10 flex w-[90%] max-w-[500px] border border-solid mx-auto"
             style={{
               borderColor: '#d9bfa9',
               boxShadow: '-5px 5px 0px #3e1008',
