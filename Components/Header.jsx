@@ -29,31 +29,34 @@ const Header = () => {
   }
 
   return (
-    <>
+    <div className="w-full max-w-[1440px] mx-auto">
       {/* Navbar */}
-      <nav className="flex justify-between items-center px-5 md:px-12 lg:px-28 py-4 bg-[#fdf9f6] shadow-md sticky top-0 z-50">
+      <nav className="flex justify-between items-center px-4 sm:px-6 md:px-12 xl:px-20 py-4 bg-[#fdf9f6] shadow-md sticky top-0 z-50 w-full">
         <Image
           src={assets.logo}
           width={180}
+          height={40}
           alt="Logo"
-          className="w-[130px] sm:w-auto"
+          className="w-[100px] sm:w-[120px] md:w-[150px] lg:w-[180px]"
+          priority
         />
 
         <Link href="/signup" passHref legacyBehavior>
           <a
-            className="flex items-center gap-2 font-medium py-2 px-4 sm:py-3 sm:px-6 border border-solid text-maroon"
+            className="flex items-center gap-1 sm:gap-2 font-medium text-sm sm:text-base py-2 px-3 sm:py-3 sm:px-6 border border-solid text-maroon"
             style={{
               borderColor: '#3e1008',
-              boxShadow: '-7px 7px 0px #3e1008',
+              boxShadow: '-5px 5px 0px #3e1008',
             }}
           >
-            Write an Entry <Image src={assets.arrow} alt="Arrow" />
+            Write an Entry{' '}
+            <Image src={assets.arrow} alt="Arrow" width={16} height={16} />
           </a>
         </Link>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] w-full flex justify-center items-center text-center text-white px-5 md:px-12 lg:px-28 overflow-visible">
+      <section className="relative min-h-[100dvh] w-full flex justify-center items-center text-center text-white px-4 sm:px-6 md:px-12 xl:px-20">
         {/* Background Video */}
         <video
           autoPlay
@@ -70,11 +73,11 @@ const Header = () => {
         <div className="absolute inset-0 bg-black/50 -z-10"></div>
 
         {/* Content wrapper */}
-        <div className="relative max-w-4xl px-4 flex flex-col items-center">
-          <h1 className="text-4xl sm:text-6xl font-semibold leading-tight text-[#ecded2]">
+        <div className="relative w-full max-w-[90%] sm:max-w-2xl lg:max-w-4xl mx-auto flex flex-col items-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-[#ecded2]">
             The Itinerary in My Head
           </h1>
-          <p className="mt-6 text-sm sm:text-base text-[#ecded2] max-w-xl">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-[#ecded2] max-w-[90%] sm:max-w-xl">
             A living journal of places I dream of, might have touched, and hope
             to reach. Nomad is a map of memories—some made, some
             imagined—gathering stories from where I’ve been, where I am, and
@@ -83,10 +86,10 @@ const Header = () => {
 
           <form
             onSubmit={onSubmitHandler}
-            className="mt-10 flex max-w-md w-full border border-solid"
+            className="mt-8 sm:mt-10 flex w-full max-w-[90%] sm:max-w-md lg:max-w-lg border border-solid"
             style={{
               borderColor: '#d9bfa9',
-              boxShadow: '-7px 7px 0px #3e1008',
+              boxShadow: '-5px 5px 0px #3e1008',
             }}
           >
             <input
@@ -94,19 +97,19 @@ const Header = () => {
               value={email}
               type="email"
               placeholder="Join my Nomadic Circle"
-              className="flex-grow px-4 py-3 bg-[#fdf9f6] text-maroon outline-none"
+              className="flex-grow px-3 sm:px-4 py-2.5 sm:py-3 bg-[#fdf9f6] text-maroon outline-none text-sm sm:text-base w-full"
               required
             />
             <button
               type="submit"
-              className="bg-[#fdf9f6] text-maroon py-3 px-6 hover:bg-deepred transition-colors duration-300"
+              className="whitespace-nowrap bg-[#fdf9f6] text-maroon py-2.5 sm:py-3 px-4 sm:px-6 text-sm sm:text-base hover:bg-deepred transition-colors duration-300"
             >
               Subscribe
             </button>
           </form>
         </div>
       </section>
-    </>
+    </div>
   )
 }
 
