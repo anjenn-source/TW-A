@@ -15,7 +15,7 @@ const BlogItem = ({ title, description, category, image, id }) => {
           className="border-b border-[#3e1008]"
         />
       </Link>
-      <p className="ml-5 mt-5 px-2 py-0.5 inline-block bg-[#3e1008] text-white text-sm rounded-sm">
+      <p className="ml-5 mt-5 px-2 py-0.5 inline-block bg-deepred text-white text-sm rounded-sm">
         {category}
       </p>
       <div className="p-5">

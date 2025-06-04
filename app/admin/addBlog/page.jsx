@@ -177,7 +177,7 @@ const AddBlogPage = () => {
           name="longitude"
           value={data.longitude}
           onChange={onChangeHandler}
-          className="w-60 mt-2 px-4 py-3 border"
+          className="w-60 mt-2 px-4 py-3 mb-6 border"
         />
 
         {/* Corrected MapWithMarker usage */}
