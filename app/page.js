@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
 
       {/* Main Content */}
-      <main className="flex-grow">
+      <main className="flex-grow bg-[#FDF9F6] py-5 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28">
         <BlogList />
       </main>
 

@@ -59,8 +59,8 @@ export default function Page({ params }) {
   }
 
   return (
-    <>
-      <div className="bg-gray-200 py-5 px-5 md:px-12 lg:px-28">
+    <div className="max-w-[1440px] mx-auto overflow-x-hidden">
+      <div className="bg-#fdf9f6 py-5 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28">
         <div className="flex justify-between items-center">
           <Link href="/">
             <Image
@@ -68,7 +68,8 @@ export default function Page({ params }) {
               width={180}
               height={100}
               alt="Logo"
-              className="w-[130px] sm:w-auto"
+              className="w-[100px] sm:w-[130px] md:w-[150px] lg:w-[180px]"
+              priority
             />
           </Link>
           <button
@@ -82,8 +83,8 @@ export default function Page({ params }) {
           </button>
         </div>
 
-        <div className="text-center my-24">
-          <h1 className="text-2xl sm:text-5xl font-semibold max-w-[700px] mx-auto text-deepred">
+        <div className="text-center my-12 sm:my-24">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold max-w-[700px] mx-auto text-deepred">
             {data.title}
           </h1>
           <Image
@@ -99,13 +100,14 @@ export default function Page({ params }) {
         </div>
       </div>
 
-      <div className="mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10">
+      <div className="px-4 sm:px-8 max-w-[800px] mx-auto mt-8 sm:mt-[-100px] mb-10">
         <Image
-          className="border-4 border-white"
+          className="border-4 border-white w-full"
           src={data.image}
           width={800}
           height={480}
           alt="Blog"
+          priority
         />
 
         <div
@@ -133,8 +135,7 @@ export default function Page({ params }) {
           </div>
         </div>
       </div>
-
       <Footer />
-    </>
+    </div>
   )
 }
